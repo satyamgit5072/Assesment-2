@@ -1,0 +1,111 @@
+{
+    "swagger": "2.0",
+    "info": {
+    "version": "1.0.0",
+    "description": "Query operations",
+    "title": "CRUD operations"
+    },
+    "host": "localhost:3000",
+    "basePath": "/",
+    "schemes": [
+    "http"
+    ],
+    "paths": {
+    "/trainees": {
+        "get": {
+            "description": "To show the trainees details",
+            "responses": {
+            "200": {
+            "description": "Successfully fetched the data"
+            }
+            }
+            },
+        "post": {
+    "description": "Api of insert",
+    "consumes": [
+    "application/json"
+    ],
+    "produces": [
+    "application/json"
+    ],
+    "parameters": [
+    {
+    "in": "body",
+    "name": "body",
+    "description": "inserting new trainees",
+    "required": true
+    }
+    ],
+    "responses": {
+    "200": {
+    "description": "successfully Inserted."
+    }
+    }
+    }
+    },
+    "/trainees/{id}": {
+    "get": {
+    "operationId": "getUserById",
+    "parameters": [
+    {
+    "name": "id",
+    "in": "path",
+    "type": "integer",
+    "format": "int64"
+    }
+    ],
+    "description": "get record of particular trainee",
+    "responses": {
+    "200": {
+    "description": "Successfully fetched the data"
+    }
+    }
+    },
+    "delete": {
+    "parameters": [
+    {
+    "name": "id",
+    "in": "path",
+    "type": "integer",
+    "format": "int64"
+    }
+    ],
+    "description": "To delete by the id",
+    "responses": {
+    "200": {
+    "description": "Successfully deleted the data"
+    }
+    }
+    },
+    "put": {
+    "parameters": [
+    {
+    "name": "id",
+    "in": "path",
+    "type": "integer",
+    "format": "int64"
+    },
+    {
+    "in": "body",
+    "name": "body",
+    "description": "add trainee object or update trainee",
+    "required": true
+    }
+    ],
+    "description": "Api of Update",
+    "summary": "Update an existing trainee or adding new trainee ",
+    "consumes": [
+    "application/json"
+    ],
+    "produces": [
+    "application/json"
+    ],
+    "responses": {
+    "200": {
+    "description": "successfully Inserted."
+    }
+    }
+    }
+    }
+    }
+    }
